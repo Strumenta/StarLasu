@@ -32,6 +32,10 @@ This type has a generic parameter type, which should extend PossiblyNamed. This 
 
 Suppose to have a language with the Node Type ReferenceExpression. The Node Type ReferenceExpression could have an attribute with type ReferenceByNam&lt;VariableDeclaration&gt;, as it permits to refer to Variable Declarations. We would expect VariableDeclaration to extend PossiblyNamed (or Named). 
 
+## Origin
+
+## Destination
+
 Note that we can accept to refer to Node Type which could potentially be anonymous, however we would typically only be able to refer to instances which actually have a name. Imagine a language that permits to define Classes and anonymous Classes. The Node Type ClassDeclaration would be PossiblyNamed, however when using a class in the typical class instantiation we would not be able to refer to anonymous classes but only to classes with a name.
 
 It has two values:
