@@ -12,18 +12,28 @@ Examples of applications that could use StarLasu:
 
 ## Content of the documentation
 
-https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_common_elements.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_definition.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/cli_tools.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/code_generation.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/debug_print_format.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/language_module.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/naming.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/parsetree_to_ast.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/position.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/serialization.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/source_and_destination.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/symbol_resolution.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/transformations.md
-https://github.com/Strumenta/StarLasu/blob/main/documentation/traversing.mg
-https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md
+At its core StarLasu permits to [define ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_definition.md).
+
+The nodes of each AST can specify [positions](https://github.com/Strumenta/StarLasu/blob/main/documentation/position.md). Related to this topic, nodes can specify their sources or their destinations (i.e., things they can be generated from them). This is discussed under [Source and Destination](https://github.com/Strumenta/StarLasu/blob/main/documentation/source_and_destination.md).
+
+StarLasu provides APIs for [traversing ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/traversing.md) and for [transforming ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/transformations.md).
+
+Other APIs support:
+- [Printing ASTs for debugging purposes](https://github.com/Strumenta/StarLasu/blob/main/documentation/debug_print_format.md)
+- [Serialization of ASTs to different formats](https://github.com/Strumenta/StarLasu/blob/main/documentation/serialization.md)
+
+### Advanced usages
+
+[Naming](https://github.com/Strumenta/StarLasu/blob/main/documentation/naming.md) is an important aspect, because it permits the implementation of [symbol resolution](https://github.com/Strumenta/StarLasu/blob/main/documentation/symbol_resolution.md).
+
+There is also support for the definition of [typesystems](https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md).
+
+### Code generation
+
+StarLasu has been initially focus on creating parsers, but these parsers have been often used to created code generators. For this reason, work is going on to support [code generation](https://github.com/Strumenta/StarLasu/blob/main/documentation/code_generation.md). When we have both a parser and a code generator for the same language we can define a [language module](https://github.com/Strumenta/StarLasu/blob/main/documentation/language_module.md).
+
+### Other topics
+
+- [Definition of common elements across languages](https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_common_elements.md)
+- [Definition of Command Line Tools](https://github.com/Strumenta/StarLasu/blob/main/documentation/cli_tools.md)
+- [Translation of ANTLR parse trees into ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/parsetree_to_ast.md)
