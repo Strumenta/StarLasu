@@ -37,3 +37,7 @@ StarLasu has been initially focus on creating parsers, but these parsers have be
 - [Definition of common elements across languages](https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_common_elements.md)
 - [Definition of Command Line Tools](https://github.com/Strumenta/StarLasu/blob/main/documentation/cli_tools.md)
 - [Translation of ANTLR parse trees into ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/parsetree_to_ast.md)
+- [Validation](https://github.com/Strumenta/StarLasu/blob/main/documentation/validation.md)
+- [Testing](https://github.com/Strumenta/StarLasu/blob/main/documentation/testing.md)
+- [EMF](https://github.com/Strumenta/StarLasu/blob/main/documentation/emf.md)
+- [Strumenta Playground](https://github.com/Strumenta/StarLasu/blob/main/documentation/playground.md)

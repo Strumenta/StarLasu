@@ -61,6 +61,9 @@ It has two values:
 
 The referred value is typically null initially and it is later set to a proper value during symbol resolution.
 
+**TODO: define error nodes**.
+
+
 ## Notes on Kolasu implementation
 
 ### Link
