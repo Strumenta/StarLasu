@@ -14,7 +14,7 @@ Examples of applications that could use StarLasu:
 
 At its core StarLasu permits to [define ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_definition.md).
 
-The nodes of each AST can specify [positions](https://github.com/Strumenta/StarLasu/blob/main/documentation/position.md). Related to this topic, nodes can specify their sources or their destinations (i.e., things they can be generated from them). This is discussed under [Source and Destination](https://github.com/Strumenta/StarLasu/blob/main/documentation/source_and_destination.md).
+The nodes of each AST can specify [positions](https://github.com/Strumenta/StarLasu/blob/main/documentation/position.md). Related to this topic, nodes can specify their origins or their destinations (i.e., things they can be generated from them). This is discussed under [Origin and Destination](https://github.com/Strumenta/StarLasu/blob/main/documentation/origin_and_destination.md).
 
 StarLasu provides APIs for [traversing ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/traversing.md) and for [transforming ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/transformations.md).
 

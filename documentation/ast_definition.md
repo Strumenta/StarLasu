@@ -61,8 +61,11 @@ It has two values:
 
 The referred value is typically null initially and it is later set to a proper value during symbol resolution.
 
-**TODO: define error nodes**.
+## Error nodes
 
+Special AST nodes can be used to represent errors.
+
+All nodes representing errors should implement the same interface called `ErrorNode`. 
 
 ## Notes on Kolasu implementation
 
