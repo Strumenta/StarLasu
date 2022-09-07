@@ -26,7 +26,7 @@ Other APIs support:
 
 [Naming](https://github.com/Strumenta/StarLasu/blob/main/documentation/naming.md) is an important aspect, because it permits the implementation of [symbol resolution](https://github.com/Strumenta/StarLasu/blob/main/documentation/symbol_resolution.md).
 
-There is also support for the definition of [typesystems](https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md).
+It is also panned to add support for the definition of [typesystems](https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md).
 
 ### Code generation
 
