@@ -13,4 +13,3 @@ StarLasu is both the above methodology and a collection of runtime libraries to 
 ## Documentation
 
 Documentation for StarLasu is available [here](https://github.com/Strumenta/StarLasu/tree/main/documentation).
-
