@@ -10,7 +10,19 @@ Examples of applications that could use StarLasu:
 * Linters
 * Refactoring tools
 
-## Content of the documentation
+## Goal of this documentation
+
+The goal of this documentation is to list the features provided by StarLasu and to describe the strategy suggested for implementing certain features. It should also help ensuring that the different libraries for the different languages provide the same features under the same logic.
+
+This is not a substitution for library-specific tutorials.
+
+## Typical usages of StarLasu
+
+TODO: building a parser (explain how the features are used for this)
+
+TODO: building a transpiler (explain how the features are used for this)
+
+## Features of StarLasu
 
 At its core StarLasu permits to [define ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_definition.md).
 
@@ -26,7 +38,7 @@ Other APIs support:
 
 [Naming](https://github.com/Strumenta/StarLasu/blob/main/documentation/naming.md) is an important aspect, because it permits the implementation of [symbol resolution](https://github.com/Strumenta/StarLasu/blob/main/documentation/symbol_resolution.md).
 
-There is also support for the definition of [typesystems](https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md).
+It is also panned to add support for the definition of [typesystems](https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md).
 
 ### Code generation
 
@@ -41,3 +53,4 @@ StarLasu has been initially focus on creating parsers, but these parsers have be
 - [Testing](https://github.com/Strumenta/StarLasu/blob/main/documentation/testing.md)
 - [EMF](https://github.com/Strumenta/StarLasu/blob/main/documentation/emf.md)
 - [Strumenta Playground](https://github.com/Strumenta/StarLasu/blob/main/documentation/playground.md)
+- [Parsers cross-platform](https://github.com/Strumenta/StarLasu/blob/main/documentation/parsers-cross-platform.md)
