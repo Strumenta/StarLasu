@@ -19,6 +19,7 @@ This is not a substitution for library-specific tutorials.
 ## Typical usages of StarLasu
 
 TODO: building a parser (explain how the features are used for this)
+
 TODO: building a transpiler (explain how the features are used for this)
 
 ## Features of StarLasu
