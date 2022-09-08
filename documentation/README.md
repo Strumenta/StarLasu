@@ -16,7 +16,12 @@ The goal of this documentation is to list the features provided by StarLasu and 
 
 This is not a substitution for library-specific tutorials.
 
-## Content of the documentation
+## Typical usages of StarLasu
+
+TODO: building a parser (explain how the features are used for this)
+TODO: building a transpiler (explain how the features are used for this)
+
+## Features of StarLasu
 
 At its core StarLasu permits to [define ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_definition.md).
 
