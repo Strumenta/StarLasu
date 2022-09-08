@@ -10,6 +10,12 @@ Examples of applications that could use StarLasu:
 * Linters
 * Refactoring tools
 
+## Goal of this documentation
+
+The goal of this documentation is to list the features provided by StarLasu and to describe the strategy suggested for implementing certain features. It should also help ensuring that the different libraries for the different languages provide the same features under the same logic.
+
+This is not a substitution for library-specific tutorials.
+
 ## Content of the documentation
 
 At its core StarLasu permits to [define ASTs](https://github.com/Strumenta/StarLasu/blob/main/documentation/ast_definition.md).
