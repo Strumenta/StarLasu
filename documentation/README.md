@@ -18,9 +18,9 @@ This is not a substitution for library-specific tutorials.
 
 ## Typical usages of StarLasu
 
-TODO: building a parser (explain how the features are used for this)
-
-TODO: building a transpiler (explain how the features are used for this)
+- [Building a parser](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-parser.md)
+- [Building a transpiler](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-transpiler.md)
+- [Building a code generator](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-codegenerator.md)
 
 ## Features of StarLasu
 
