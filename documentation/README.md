@@ -1,18 +1,21 @@
-# StarLasu: Introduction
+# StarLasu: Overview
 
-StarLasu is a set of a library to work with Abstract Syntax Trees.
+StarLasu is a set of a library to work with Abstract Syntax Trees (ASTs).
 
 Examples of applications that could use StarLasu:
-* Transpilers
-* Parsers
-* Code editors
-* Code analyzers
-* Linters
-* Refactoring tools
 
-## Goal of this documentation
+- Transpilers
+- Parsers
+- Code editors
+- Code analyzers
+- Linters
+- Refactoring tools
 
-The goal of this documentation is to list the features provided by StarLasu and to describe the strategy suggested for implementing certain features. It should also help ensuring that the different libraries for the different languages provide the same features under the same logic.
+StarLasu can be used to build different modules producing ASTs, enriching ASTs, transforming ASTs, and finally consuming ASTs. These modules can be combined to produce different pipelines for different goals.
+
+## Goal of this document
+
+The goal of this document is to list the features provided by StarLasu and to describe the strategy suggested for implementing certain features. It should also help ensuring that the different libraries for the different languages provide the same features under the same logic.
 
 This is not a substitution for library-specific tutorials.
 
