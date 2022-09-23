@@ -1,6 +1,7 @@
 # AST Definition
 
 An Abstract Syntax Tree (AST) defined with StarLasu, has these characteristics:
+
 * It has a single root
 * Each node has a type
 * Each node has a parent, with the exception of root node
@@ -17,6 +18,7 @@ Given we support references, the AST could be consider a Graph in reality.
 
 Let's suppose to have a Node representing a Java method declaration.
 It may have the following properties:
+
 - A name attribute, of type String, with multiplicity 1..1
 - A reference to a method that it overrides, without associated name, and with a multiplicity 0..1
 - A containment relation with the parameters, with multiplicity 0..*
@@ -25,6 +27,7 @@ It may have the following properties:
 ## Attribute values
 
 Attribute values can have one of these types:
+
 - String
 - Character
 - Boolean
@@ -51,11 +54,12 @@ references.
 In textual languages we have typically references resolved by name (see [Naming](https://github.com/Strumenta/StarLasu/blob/main/documentation/naming.md)). For this reason in StarLasu we have special support for the type ReferenceByName.
 This type has a generic parameter type, which should extend PossiblyNamed. This type indicates the type of thing that can be referred to.
 
-Suppose to have a language with the Node Type ReferenceExpression. The Node Type ReferenceExpression could have an attribute with type ReferenceByNam&lt;VariableDeclaration&gt;, as it permits to refer to Variable Declarations. We would expect VariableDeclaration to extend PossiblyNamed (or Named). 
+Suppose to have a language with the Node Type ReferenceExpression. The Node Type ReferenceExpression could have an attribute with type ReferenceByName&lt;VariableDeclaration&gt;, as it permits to refer to Variable Declarations. We would expect VariableDeclaration to extend PossiblyNamed (or Named). 
 
 Note that we can accept to refer to Node Type which could potentially be anonymous, however we would typically only be able to refer to instances which actually have a name. Imagine a language that permits to define Classes and anonymous Classes. The Node Type ClassDeclaration would be PossiblyNamed, however when using a class in the typical class instantiation we would not be able to refer to anonymous classes but only to classes with a name.
 
 It has two values:
+
 - a name value, of type String
 - a referred value
 

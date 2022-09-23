@@ -9,6 +9,7 @@ See `assertParseTreeStr`, `assertParsingResultsAreEqual`, and `assertASTsAreEqua
 Related to this, there is experimental support for verifying the Coverage of a grammar by the examples we have. See [CoverageListener](https://github.com/Strumenta/kolasu/blob/master/core/src/main/kotlin/com/strumenta/kolasu/parsing/coverage/CoverageListener.kt) in Kolasu. 
 
 The goal is that, given a grammar and a set of examples, we want to understand:
+
 - How many possible paths in the grammar are covered
 - Which alternatives are not covered, so that we can look for appropriate examples
 

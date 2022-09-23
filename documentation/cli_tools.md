@@ -3,6 +3,7 @@
 StarLasu supports the definition of CLI tools for each parser. These CLI tools are intended for the parser users.
 
 These tools permit to:
+
 - Generate and serialize the AST in various formats
 - Generate statistics
 
