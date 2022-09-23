@@ -78,7 +78,7 @@ All nodes representing errors should implement the same interface called `ErrorN
 When a reference has no associated string, the property is marked as _Link_.
 
 For example:
-```
+```kotlin
 class MethodDeclaration {
   @Link val overriddenMethod: MethodDeclaration?
 }
@@ -91,14 +91,14 @@ The interface `NodeType` can be used to specify that a certain Class represent a
 
 For example, if we define:
 
-```
+```kotlin
 @NodeType
 interface Declaration
 ```
 
 and later we have a Node using it:
 
-```
+```kotlin
 class CompilationUnit {
   val elements: List<Declaration> // we know this is a containment, because elements are expected to be Nodes
 }
@@ -106,7 +106,7 @@ class CompilationUnit {
 
 We could then have different classes implementing Declaration:
 
-```
+```kotlin
 sealed class Statement: Node
 
 class VarDeclaration : Statement, Declaration // VarDeclaration indirectly extend Node

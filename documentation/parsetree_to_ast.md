@@ -9,7 +9,7 @@ display 456
 
 We would like to parse this with ANTLR, and then translate the resulting parse-tree into an AST. We can do that in this way:
 
-```
+```kotlin
 val transformer = ParseTreeToASTTransformer()
 transformer.registerNodeFactory(SimpleLangParser.CompilationUnitContext::class, CU::class)
     .withChild(SimpleLangParser.CompilationUnitContext::statement, CU::statements)
