@@ -13,3 +13,4 @@ We first build an RPG parser that given RPG code product an RPG AST. The root of
 Then we build a transformer that given an RPG AST produces a Java AST. The root of such AST may have type JavaCompilationUnit. The origin of a JavaCompilationUnit will refer to another node, in this case having type RPGCompilationUnit.
 
 In a Node we may also indicate what can be created from a Node. For example, if we build programmatically an AST and then we want to generate code from it, we may want to specify for each node what portion of code has been generated. For example, a node representing an If Statement in Java could end up being represented by a 5 lines of Java code inside a large Java file. In that case, the Destination will specify the name of the file and the lines and columns representing our If Statement.
+

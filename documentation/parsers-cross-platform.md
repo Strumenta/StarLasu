@@ -9,3 +9,4 @@ On the other hand we want to avoid having to rewrite the parsers for the same la
 - generate an AST unserializers from the metamodel
 
 In this way we could write a parser for RPG in Kotlin, using Kolasu. We would then automatically generate equivalent AST classes in Pylasu, and code to unserialize an AST instantiating those AST classes. In the end, we would obtain a parser usable from Python, which expose AST classes in Python. The implementation would call the parser written in Kotlin, obtain the AST serialized and unserialize it behind the scenes.
+

@@ -15,3 +15,4 @@ Process:
 
 The StarLasu ASTs provides a more convenient API with respect to the ANTLR APIs for parse trees. They provide additional features like serialization 
 or support for symbol resolution. Finally in the mapping process we clean the parse-tree, organize the information in the most convenient way for users.
+

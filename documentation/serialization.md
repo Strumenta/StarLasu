@@ -5,3 +5,4 @@ In addition to what is described here, there is also EMF serialization, which is
 StarLasu supports exporting ASTs to JSON and XML.
 
 _See in [Kolasu](https://github.com/Strumenta/kolasu/tree/master/core/src/main/kotlin/com/strumenta/kolasu/serialization)_.
+

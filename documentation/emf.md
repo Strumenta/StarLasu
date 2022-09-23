@@ -10,3 +10,4 @@ In our case, metamodels are the definition of the node types. For example, speci
 Models are instead ASTs.
 
 _See in [Kolasu](https://github.com/Strumenta/kolasu/tree/master/emf)_.
+

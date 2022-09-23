@@ -77,3 +77,4 @@ StarLasu has been initially focus on creating parsers, but these parsers have be
 - [EMF](https://github.com/Strumenta/StarLasu/blob/main/documentation/emf.md)
 - [Strumenta Playground](https://github.com/Strumenta/StarLasu/blob/main/documentation/playground.md)
 - [Parsers cross-platform](https://github.com/Strumenta/StarLasu/blob/main/documentation/parsers-cross-platform.md)
+
