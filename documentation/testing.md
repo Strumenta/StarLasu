@@ -17,10 +17,8 @@ Another solution is to verify the coverage of the generated ANTLR Parser.
 
 ## Performance testing
 
-TBW
+_To be written._
 
 ## Test the parser on examples
 
 In practice it is often convenient to run the parser on a larget set of examples and just check if the parser can handle them without finding errors.
-
-_Alessio has a system that tracks which examples are correctly parsed or not with respect to the previous run of the tests._

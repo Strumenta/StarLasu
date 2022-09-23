@@ -10,3 +10,4 @@ They are:
 
 _See in [Kolasu](https://github.com/Strumenta/kolasu/blob/master/core/src/main/kotlin/com/strumenta/kolasu/model/CommonElements.kt)_
 
+_This is not yet supported in Pylasu._
