@@ -1,10 +1,12 @@
-HTMLOUTPUT="build/StarLasuOverview.html"
+HTMLOUTPUT="build/htmldoc/StarLasuOverview.html"
+PDFOUTPUT="build/pdfdoc/StarLasuOverview.pdf"
 
-mkdir -p build
+mkdir -p build/htmldoc
+mkdir -p build/pdfdoc
 
-cp -R css build
+cp -R css build/htmldoc
 
-cat configuration/pandoc.md documentation/README.md documentation/usecases/building-parser.md documentation/usecases/building-transpiler.md documentation/usecases/building-codegenerator.md documentation/ast_definition.md documentation/position.md documentation/origin_and_destination.md documentation/traversing.md documentation/transformations.md documentation/debug_print_format.md documentation/serialization.md documentation/naming.md documentation/symbol_resolution.md documentation/typesystem.md documentation/code_generation.md documentation/language_module.md documentation/ast_common_elements.md documentation/cli_tools.md documentation/parsetree_to_ast.md documentation/validation.md documentation/testing.md documentation/emf.md documentation/playground.md documentation/parsers-cross-platform.md > build/source.md
+cat documentation/README.md documentation/usecases/building-parser.md documentation/usecases/building-transpiler.md documentation/usecases/building-codegenerator.md documentation/ast_definition.md documentation/position.md documentation/origin_and_destination.md documentation/traversing.md documentation/transformations.md documentation/debug_print_format.md documentation/serialization.md documentation/naming.md documentation/symbol_resolution.md documentation/typesystem.md documentation/code_generation.md documentation/language_module.md documentation/ast_common_elements.md documentation/cli_tools.md documentation/parsetree_to_ast.md documentation/validation.md documentation/testing.md documentation/emf.md documentation/playground.md documentation/parsers-cross-platform.md > build/source.md
 
 sed -i '.bak' 's/https:\/\/github.com\/Strumenta\/StarLasu\/blob\/main\/documentation\/usecases\///g' build/source.md
 sed -i '.bak' 's/https:\/\/github.com\/Strumenta\/StarLasu\/blob\/main\/documentation\///g' build/source.md
@@ -33,10 +35,9 @@ sed -i '.bak' 's/playground.md/#strumenta-playground/g' build/source.md
 sed -i '.bak' 's/parsers-cross-platform.md/#cross-platform-parsers/g' build/source.md
 
 
-pandoc -c css/documentation.css -H configuration/listings-setup.tex -s build/source.md --metadata pagetitle="StarLasu Overview" -o $HTMLOUTPUT
+pandoc -c css/documentation.css -s build/source.md --metadata pagetitle="StarLasu Overview" -o $HTMLOUTPUT
 
-#pandoc --pdf-engine=xelatex $HTMLOUTPUT -o build/StarLasuOverview-BYHTML.pdf
-pandoc -c css/documentation.css -H configuration/listings-setup.tex --variable colorlinks=true build/source.md --listings  --metadata pagetitle="StarLasu Overview" -o build/StarLasuOverview.pdf
+pandoc -c css/documentation.css -H configuration/listings-setup.tex --variable colorlinks=true build/source.md --listings  --metadata pagetitle="StarLasu Overview" -o $PDFOUTPUT
  
           
 
