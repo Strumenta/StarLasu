@@ -1,0 +1,20 @@
+name: Publish Generated Documentation
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+       
+  archive-build-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Generate PDF documentation
+        run: sh generatedoc.sh
+            
+      - name: Upload PDF documentation
+        uses: actions/upload-artifact@v2
+        with: 
+          name: StarLasu Documentation (PDF)
+          path: build/StarLasuOverview.pdf
