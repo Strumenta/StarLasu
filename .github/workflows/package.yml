@@ -10,15 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - uses: actions/checkout@v2
+
       - name: Generate HTML and PDF documentation
         run: sh generatedoc.sh
 
-      - name: Upload PDF documentation
+      - name: Upload HTML documentation
         uses: actions/upload-artifact@v2
         with: 
           name: StarLasu Documentation (HTML)
           path: build/htmldoc
-
             
       - name: Upload PDF documentation
         uses: actions/upload-artifact@v2
