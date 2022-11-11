@@ -9,7 +9,7 @@ StarLasu is both the above methodology and a collection of runtime libraries to 
 * [Kolasu](https://github.com/Strumenta/kolasu): it was the first library to be developed. It supports development in Kotlin and Java.
 * [Tylasu](https://github.com/Strumenta/tylasu): it supports development in Typescript and Javascript. We're working to advance it to be on par with Kolasu.
 * [Pylasu](https://github.com/Strumenta/pylasu): it supports development in Python. It is fairly recent but it is progressing quite rapidly.
-* [Cslasu](https://github.com/Strumenta/Cslasu): it supports development in C#. It is the most recently created and it is ongoing active development.
+* [Sharplasu](https://github.com/Strumenta/sharplasu): it supports development in C#. It is the most recently created and it is ongoing active development.
 
 ## Documentation
 
