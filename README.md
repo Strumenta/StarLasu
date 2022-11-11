@@ -4,7 +4,7 @@ When building an interpreter, transpiler, compiler, editor, static analysis tool
 
 Source code --ANTLR4 parser--> Parse tree __--StarLasu--> AST__ --Further processing--> ... --> Result
 
-StarLasu is both the above methodology and a collection of runtime libraries to support it in Java, Kotlin, Python, Javascript, and Typescript:
+StarLasu is both the above methodology and a collection of runtime libraries to support it in Java, Kotlin, Python, Javascript, Typescript, and C#:
 
 * [Kolasu](https://github.com/Strumenta/kolasu): it was the first library to be developed. It supports development in Kotlin and Java.
 * [Tylasu](https://github.com/Strumenta/tylasu): it supports development in Typescript and Javascript. We're working to advance it to be on par with Kolasu.
