@@ -8,7 +8,7 @@ The libraries are:
 - [Kolasu](https://github.com/strumenta/kolasu), for the implementation on the JVM (and in particular with Kotlin and Java)
 - [Tylasu](https://github.com/strumenta/tylasu), for the implementation on Node.JS and on the browser, using Typescript or Javascript
 - [Pylasu](https://github.com/strumenta/pylasu), for the implementation with Python
-- [Cslasu](https://github.com/strumenta/Cslasu), for the implementation with C#
+- [Sharplasu](https://github.com/strumenta/sharplasu), for the implementation with C#
 
 Examples of applications that could use StarLasu:
 
