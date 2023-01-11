@@ -43,7 +43,7 @@ These are the most typical applications that could be designed using StarLasu:
 - [Building a transpiler](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-transpiler.md)
 - [Building a code generator](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-codegenerator.md)
 
-StarLasu can be used to develop other Language Engineering applications (for example, insider editors, to provide Language Intelligence). One of the goals of StarLasu is indeed to provide modularity, in according to the principles of Model Driven Development. Because of this, the different modules built with StarLasu can be combined in original ways, for many different purposes.
+StarLasu can be used to develop other Language Engineering applications (for example, inside editors, to provide Language Intelligence). One of the goals of StarLasu is indeed to provide modularity, in according to the principles of Model Driven Development. Because of this, the different modules built with StarLasu can be combined in original ways, for many different purposes.
 
 ## Features of StarLasu
 
@@ -62,7 +62,7 @@ Other APIs support:
 
 [Naming](https://github.com/Strumenta/StarLasu/blob/main/documentation/naming.md) is an important aspect, because it permits the implementation of [symbol resolution](https://github.com/Strumenta/StarLasu/blob/main/documentation/symbol_resolution.md).
 
-It is also panned to add support for the definition of [typesystems](https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md).
+It is also planned to add support for the definition of [typesystems](https://github.com/Strumenta/StarLasu/blob/main/documentation/typesystem.md).
 
 ### Code generation
 
