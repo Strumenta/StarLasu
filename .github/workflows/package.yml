@@ -5,24 +5,34 @@ on:
     branches: [ main ]
 
 jobs:
-       
+
   archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
 
       - uses: actions/checkout@v2
 
-      - name: Generate HTML and PDF documentation
-        run: sh generatedoc.sh
+      - name: Prepare documentation generation
+        run: sh preparedoc.sh
+
+      - name: Generate HTML documentation
+        uses: docker://pandoc/latex:2.9
+        with:
+          args: -c css/documentation.css -s build/source.md --metadata pagetitle="StarLasu Overview" -o build/htmldoc/StarLasuOverview.html
+
+      - name: Generate PDF documentation
+        uses: docker://pandoc/latex:2.9
+        with:
+          args: -c css/documentation.css -H configuration/listings-setup.tex --variable colorlinks=true build/source.md --listings  --metadata pagetitle="StarLasu Overview" -o build/pdfdoc/StarLasuOverview.pdf
 
       - name: Upload HTML documentation
         uses: actions/upload-artifact@v2
-        with: 
+        with:
           name: StarLasu Documentation (HTML)
           path: build/htmldoc
-            
+
       - name: Upload PDF documentation
         uses: actions/upload-artifact@v2
-        with: 
+        with:
           name: StarLasu Documentation (PDF)
           path: build/pdfdoc
