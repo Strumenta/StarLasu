@@ -6,7 +6,7 @@ The methodology is supported by a set of libraries that permit its application o
 The libraries are:
 
 - [Kolasu](https://github.com/strumenta/kolasu), for the implementation on the JVM (and in particular with Kotlin and Java)
-- [Tylasu](https://github.com/strumenta/tylasu), for the implementation on Node.JS and on the browser, using Typescript or Javascript
+- [Tylasu](https://github.com/strumenta/tylasu), for the implementation on Node.js and on the browser, using Typescript or Javascript
 - [Pylasu](https://github.com/strumenta/pylasu), for the implementation with Python
 - [Sharplasu](https://github.com/strumenta/sharplasu), for the implementation with C#
 
@@ -51,9 +51,9 @@ resources, API documentation, etc.
 
 These are the most typical applications of StarLasu:
 
-- [Building a parser](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-parser.md)
-- [Building a code generator](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-codegenerator.md)
-- [Building a transpiler](https://github.com/Strumenta/StarLasu/blob/main/documentation/usecases/building-transpiler.md)
+- [Building a parser](usecases/building-parser.md)
+- [Building a code generator](usecases/building-codegenerator.md)
+- [Building a transpiler](usecases/building-transpiler.md)
 
 StarLasu can be used to develop other Language Engineering applications (for example, inside editors, to provide 
 Language Intelligence). One of the goals of StarLasu is indeed to provide modularity, in according to the principles of 

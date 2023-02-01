@@ -7,7 +7,8 @@ set foo = 123
 display 456
 ```
 
-We would like to parse this with ANTLR, and then translate the resulting parse-tree into an AST. StarLasu offers _transformers_ to implement such mappings:
+We would like to parse this with ANTLR, and then translate the resulting parse-tree into an AST. StarLasu offers
+_transformers_ to implement such mappings. For example, with Kolasu we may write:
 
 ```kotlin
 val transformer = ParseTreeToASTTransformer()
@@ -30,5 +31,8 @@ val cu = CU(
 ).withParseTreeNode(pt)
 ```        
 
-_See in [Kolasu](https://github.com/Strumenta/kolasu/tree/master/core/src/main/kotlin/com/strumenta/kolasu/mapping)_.
+Read more about this topic for:
+- [Kolasu](https://javadoc.io/doc/com.strumenta.kolasu/kolasu-core/latest/com/strumenta/kolasu/mapping/ParseTreeToASTTransformer.html) ([source code](https://github.com/Strumenta/kolasu/tree/master/core/src/main/kotlin/com/strumenta/kolasu/mapping))
+- [Pylasu](https://pylasu.readthedocs.io/en/latest/pylasu.mapping.html#pylasu-mapping-parse-tree-to-ast-transformer-module)
+- [Tylasu](https://strumenta.github.io/tylasu/classes/mapping.parsetreetoasttransformer.html)
 

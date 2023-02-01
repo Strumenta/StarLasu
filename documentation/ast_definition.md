@@ -9,47 +9,50 @@ An Abstract Syntax Tree (AST) defined with StarLasu, has these characteristics:
   - a package it belongs to
   - a name
   - a list of properties
-* Each node property can represent an attribute, a containment relation, or a reference relation
+* Each property of a node may represent an attribute, a containment relation, or a reference relation.
 * Each property has a name and a multiplicity. Multiplicity can be 1, 0..1, 0..* . Every kind of property can have all these kinds of multiplicity (i.e., we can have references with multiple values)
-* Each node should be part of exactly one containment relation, with the exception of the root node which should not be contained by any other node
-* A Reference Relation can have an associated name or not
+* Each node should be part of exactly one containment relation, except for the root node which should not be contained by any other node
+* A Reference Relation may or may not have an associated name.
 
-Given we support references, the AST could be consider a Graph in reality.
+All StarLasu implementations target object-oriented languages. So, the preferred way of defining a node type is
+__by inheritance__, i.e. subclassing the `Node` class.
+[[Kolasu]](https://javadoc.io/doc/com.strumenta.kolasu/kolasu-core/latest/com/strumenta/kolasu/model/Node.html)
+[[Pylasu]](https://pylasu.readthedocs.io/en/latest/pylasu.model.html#pylasu.model.model.Node)
+[[Tylasu]](https://strumenta.github.io/tylasu/classes/core.node.html)
 
-Let's suppose to have a Node representing a Java method declaration.
+Given we support references, the AST is actually a graph. However, references are usually rarer than containment relations,
+and the parent-child relationship between nodes is the most common path for traversal, so the tree aspect is dominant. 
+
+Suppose we have a Node representing a Java method declaration.
 It may have the following properties:
 
 - A name attribute, of type String, with multiplicity 1..1
-- A reference to a method that it overrides, without associated name, and with a multiplicity 0..1
-- A containment relation with the parameters, with multiplicity 0..*
+- A reference to a method that it overrides, without an associated name, and with a multiplicity 0..1
+- A containment relation with its arguments, with multiplicity 0..*
 - A containment relation to an optional body, with multiplicity 0..1
 
-## Attribute values
+## Attribute Values
 
 Attribute values can have one of these types:
 
-- String
-- Character
-- Boolean
-- Integer
-- Long
-- Float
-- Double
-- BigInteger
-- BigDecimal
-- LocalDate
-- LocalTime
-- LocalDateTime
-- A kind of Enum
+- string (e.g. String in Kotlin, str in Python)
+- character, in those languages that have a character type
+- boolean
+- numeric types (including bignums in those languages that have them)
+- date and time types (e.g., in Kotlin, LocalDate, LocalTime, LocalDateTime)
+- enum types (where applicable). An enum has a list of possible values, each one with a name.
 
-An Enum has a list of possible values, each one with a name.
+## Derived Properties
 
-## Derived
+Some properties could be calculated, i.e., derived from other properties. They are typically not serialized, e.g. to 
+JSON, with the rationale that we can recompute them.
 
-Some properties could be calculated, i.e., derived from other properties. They are typically not serialized. They cannot represent containment by only
-references. 
+These properties cannot represent containment, only references. To mark a property as derived, we mark it with `@Derived`. 
+[[Kolasu]](https://javadoc.io/doc/com.strumenta.kolasu/kolasu-core/latest/com/strumenta/kolasu/model/Derived.html)
 
-## Reference by Name
+Currently, neither Tylasu nor Pylasu supports this. 
+
+## References by Name
 
 In textual languages we have typically references resolved by name (see [Naming](https://github.com/Strumenta/StarLasu/blob/main/documentation/naming.md)). For this reason in StarLasu we have special support for the type ReferenceByName.
 This type has a generic parameter type, which should extend PossiblyNamed. This type indicates the type of thing that can be referred to.
@@ -69,7 +72,10 @@ The referred value is typically null initially and it is later set to a proper v
 
 Special AST nodes can be used to represent errors.
 
-All nodes representing errors should implement the same interface called `ErrorNode`. 
+All nodes representing errors should implement the same interface called `ErrorNode`.
+[[Kolasu]](https://javadoc.io/doc/com.strumenta.kolasu/kolasu-core/latest/com/strumenta/kolasu/model/ErrorNode.html)
+[[Pylasu]](https://pylasu.readthedocs.io/en/latest/pylasu.model.html#pylasu.model.errors.ErrorNode)
+[[Tylasu]](https://strumenta.github.io/tylasu/classes/core.errornode.html)
 
 ## Notes on Kolasu implementation
 
@@ -87,7 +93,9 @@ class MethodDeclaration {
 
 ### NodeType
 
-The interface `NodeType` can be used to specify that a certain Class represent a Node. This is inteded to be used on abstract classes that do not directly extend Node or interfaces. All concrete classes deriving from them should also extend Node, indirectly.
+The interface `NodeType` can be used to specify that a certain Class represent a Node. This is intended to be used on
+abstract classes that do not directly extend Node or interfaces. All concrete classes deriving from them should also 
+extend Node, indirectly.
 
 For example, if we define:
 
