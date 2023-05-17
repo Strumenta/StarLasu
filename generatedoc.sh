@@ -1,7 +1,7 @@
 HTMLOUTPUT="build/htmldoc/StarLasuOverview.html"
 PDFOUTPUT="build/pdfdoc/StarLasuOverview.pdf"
 
-sh preparedoc.sh
+sh ./preparedoc.sh
 
 pandoc -c css/documentation.css -s build/source.md --metadata pagetitle="StarLasu Overview" -o $HTMLOUTPUT
 
