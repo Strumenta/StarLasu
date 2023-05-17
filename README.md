@@ -17,4 +17,7 @@ Documentation for StarLasu is available [here](https://github.com/Strumenta/Star
 
 ## Publication
 
+You will need pandoc with pdflatex (`brew install pandoc basictex`).
+
+
 Updating the published version requires manually uploading the generated files to Netlify. At the moment Federico is the only one who has access.
