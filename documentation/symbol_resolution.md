@@ -37,9 +37,10 @@ While it is possible to manually implement symbol resolution by traversing the A
 As mentioned in the previous section, it is surely possible to manually implement symbol resolution as some kind of tree-traversal algorithm. However, StarLasu provides support to ease such task and allows the developer to focus on language-specific concerns by providing rules for each reference in a given AST.
 
 Symbol resolution rule specifications consist of three parts:
-- __guard__ - the reference property or type for which we want to provide a scope;
-- __context__ - the node from which we want to compute the scope;
-- __body__ - the actual scope definition, i.e. `Scope` instance;
+
+* __guard__ - the reference property or type for which we want to provide a scope;
+* __context__ - the node from which we want to compute the scope;
+* __body__ - the actual scope definition, i.e. `Scope` instance;
 
 Each rule produces a `Scope` instance that is used to resolve a given property or all properties of a given type. Given a property, StarLasu adopts a precise rule resolution schema. Considering `Person::friend`, for example, the following steps will be performed: 
 
