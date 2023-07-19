@@ -75,6 +75,7 @@ On top of the above core features, StarLasu builds several advanced concepts, de
 
 [Symbol Resolution](https://github.com/Strumenta/StarLasu/blob/main/documentation/symbol_resolution.md)
 is the process of giving a _meaning_ to the each _name_ in the source code. For example:
+
 * to connect a given use of a variable to its declaration;
 * to reconstruct the definition of a SQL column from an alias in a subquery;
 * to identify a user-defined therapy plan in a medical support DSL. 

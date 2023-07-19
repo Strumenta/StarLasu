@@ -11,6 +11,7 @@ Initially, we define an ANTLR grammar. Then, we define AST classes are using Sta
 An initial version may also be generated from the ANTLR grammar, by using StarLasu-Tools.
 
 We then organize the parser into a pipeline:
+
 1. First-stage parsing using ANTLR. We obtain a parse tree and, possibly, a series of errors.
 2. Second-stage parsing. [The parse tree is mapped into the AST](../parsetree_to_ast.md)
 3. Potentially, for some parsers, we perform additional steps, such as:
