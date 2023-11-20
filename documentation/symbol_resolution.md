@@ -38,34 +38,28 @@ As mentioned in the previous section, it is surely possible to manually implemen
 
 Symbol resolution rule specifications consist of three parts:
 
-* __guard__ - the reference property or type for which we want to provide a scope;
+* __guard__ - the reference property for which we want to provide a scope;
 * __context__ - the node from which we want to compute the scope;
 * __body__ - the actual scope definition, i.e. `Scope` instance;
 
-Each rule produces a `Scope` instance that is used to resolve a given property or all properties of a given type. Given a property, StarLasu adopts a precise rule resolution schema. Considering `Person::friend`, for example, the following steps will be performed: 
+Each rule produces a `Scope` instance that is used to resolve a given property. Given a property, StarLasu adopts a precise rule resolution schema. Considering `Person::friend`, for example, the following steps will be performed: 
 
 1) lookup for a property-based rule having `Person::friend` as guard and `Person` as context;  
 2) lookup for a property-based rule having `Person::friend` as guard and any ancestor of the `Person` node as context;
-3) lookup for a type-based rule having `Person` as guard and `Person` as context;
-4) lookup for a type-based rule having `Person` as guard and any ancestor of the `Person` node as context;
 
 As soon as one rule is found, the symbol resolver will use it to resolve the reference.
 
-In our example, we could define that `friend` reference candidates should correspond to aggregating all `Person` instances of the AST as follows:
+In our example, we could define that `friend` reference candidates should correspond to aggregating all `Person` instances contained in the `CompilationUnit` of the AST as follows:
 ```kotlin
 val symbolResolver = symbolResolver {
     // property-based rule for Person::friend property
-    scopeFor(Person::friend) { context: CompilationUnit ->
-        Scope().apply {
-            context.walk().filterIsInstance<Person>().forEach { define(it) }
-        }
-    }
-    // type-based rule for references to Person instances
-    scopeFor(Person::class) { context: CompilationUnit -> 
-        Scope().apply {
-            context.walk().filterIsInstance<Person>().forEach { define(it) }
+    scopeFor(Person::friend) {
+        scope {
+            it.findAncestorOfType(CompilationUnit::class.java)
+                ?.walk()
+                ?.filterIsInstance<Person>()
+                ?.forEach(this::define)
         }
     }
 }
 ```
-In the example, `CompilationUnit` represent a container node in the AST. The type-based rule will never be executed as the property-based rule will be found before following the above mentioned resolution schema. Analogously, a property-based rule with `Person` as context would be executed in place of the first rule in our example.
