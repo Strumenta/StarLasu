@@ -1,4 +1,4 @@
-HTMLOUTPUT="build/htmldoc/StarLasuOverview.html"
+HTMLOUTPUT="build/htmldoc/index.html"
 PDFOUTPUT="build/pdfdoc/StarLasuOverview.pdf"
 
 sh ./preparedoc.sh
@@ -7,9 +7,4 @@ pandoc -c css/documentation.css -s build/source.md --metadata pagetitle="StarLas
 
 pandoc -c css/documentation.css -H configuration/listings-setup.tex --variable colorlinks=true build/source.md --listings  --metadata pagetitle="StarLasu Overview" -o $PDFOUTPUT
 
-
-
-
-
-
-
+tar -czf build/website.tar.gz build/htmldoc/*
