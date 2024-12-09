@@ -10,11 +10,15 @@ It reflects lessons learned about what works and what doesn’t,
 combining this expertise to deliver reliable and adaptable language processing systems.
 
 ## What can you do with it?
-The method has been validated through extensive real-world applications, including:
-1. **Designing Domain-Specific Languages (DSLs)**: Tailored languages for specific domains with accompanying editors and execution engines.
-2. **Building Transpilers**: Applications that translate code from one language to another.
-3. **Creating Parsers**: Tools that generate ASTs for code analysis, documentation generation, or as the initial step of transpilers.
 
+The goal is to be able to define arbitrary Language Engineering applications, and flexibility is the main goal
+of this approach.
+
+Concretely, the most common applications we write using these methods are:
+1. **Domain-Specific Languages (DSLs)**: We define new tailored languages for specific domains with accompanying editors and execution engines (either interpreters or code generators).
+2. **Transpilers**: Applications that translate code from one language to another. Typically from a legacy language such as RPG to a modern one such as Java.
+3. **Parsers**: Tools that generate Code Models for code analysis, documentation generation, or as the initial step of 
+transpilers. We typically implements these Parsers that are then used to build code analysis tools, transpilers, or other systems. 
 
 ## Overview
 
@@ -43,7 +47,14 @@ They provide Language Intelligence by using the underlying Code Model
 
 These components work in a star-like configuration around the AST, emphasizing modularity
 
-## What one gets?
+## What one gets from Starlasu?
+
+Starlasu consists of a mental framework and guidelines to build the different component. For example, we have a detailed
+method to design and implement parsers (see [The Chisel Method](ChiselMethod.md)).
+
+One also gets a family of libraries, all built around the same principles but for different programming languages. In this
+way one can conveniently use the Starlasu when programming in a multitude of programming languages.
+
 Starlasu is supported by a family of libraries, each optimized for different platforms:
 - **Kolasu**: For the JVM (Java, Kotlin), expanding to Node.js and browser environments in version 1.6.
 - **Tylasu**: For Node.js and browser environments.
