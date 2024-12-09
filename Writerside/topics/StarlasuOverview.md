@@ -14,22 +14,27 @@ combining this expertise to deliver reliable and adaptable language processing s
 The Starlasu method is centered around the idea of **Code Model**. 
 We have this component at the center and a constellation of other components interacting with it.
 
+![Overview of the Starlasu Approach](../images/StarlasuOverview.png)
+
 ### The Code Model
 The **Code Model** represents a representation of the information present in the code, in a form that facilitates
 reasoning about it and processing. It facilitates reasoning by being close to the mental model a developer would 
-have of the code and it facilitate processing through the dualistic homogeneous and heterogeneous APIs. TODO LINKS.
+have of the code and it facilitate processing through the [dualistic homogeneous and heterogeneous APIs](DualCodeModelAPIs.md).
 
 The Code Model is an evolution of the Abstract Syntax Tree (AST).
 
 ### Surrounding Components
 Around this central model, there are several essential components:
-- **Parsers**: Convert code into the AST.
-- **Code Generators**: Produce code from the AST.
-- **Editors**: Offer a user interface for working with the AST.
-- **Symbol Resolution**: Connects usages of variables and functions to their definitions.
-- **Type Calculation**: Annotates the AST with type-related information.
+- **Parsers**: These components process code, and "understand it". This understanding is defined as the Code Model.
+- **Code Generators**: These components produce code according to a Code Model.
+- **Code Model Transformations**: These components produce a different Code Model, from an original Code Model.
+- **Editors**: These components permit to edit code, either through textual, graphical, or projectional editors. 
+They provide Language Intelligence by using the underlying Code Model
+- **Semantic Enrichment**: These components analyze a Code Model performing symbol resolution and type calculation over it,
+ and adding additional metadata to the original Code Model. 
+- **Interpreters**: They permit the execution of Code Models
 
-These components work in a star-like configuration around the AST, emphasizing modularity and scalability.
+These components work in a star-like configuration around the AST, emphasizing modularity
 
 ## Why the name Starlasu?
 
@@ -93,3 +98,5 @@ Below is a detailed matrix of the features provided by the Starlasu libraries:
 ---
 
 For more information, visit [Strumenta’s Website](https://strumenta.com).
+
+MENTION CHISEL AND SPECIFIC METHODS FOR PARSERS, DSLS, TRANSPILERS

@@ -4,7 +4,9 @@
 
 <instance-profile id="s"
                  name="StarLasu"
-                 start-page="starter-topic.md">
+                 start-page="StarlasuOverview.md">
 
-    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="StarlasuOverview.md"/>
+    <toc-element topic="DualCodeModelAPIs.md"/>
+    <toc-element topic="ChiselMethod.md"/>
 </instance-profile>
