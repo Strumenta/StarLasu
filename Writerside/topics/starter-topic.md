@@ -9,14 +9,17 @@ Engineering projects.
 It reflects lessons learned about what works and what doesn’t, 
 combining this expertise to deliver reliable and adaptable language processing systems.
 
-## Key Concepts
+## Overview
 
-Let's see some core concepts
+The Starlasu method is centered around the idea of **Code Model**. 
+We have this component at the center and a constellation of other components interacting with it.
 
-### Central Model
-At the heart of the Starlasu method is the **Code Model**, also known as the Abstract Syntax Tree (AST). 
-This model is a structured representation of the code that embodies its meaning. While “AST” is a common term, 
-we are exploring alternative names such as “Code Model” or “Language Model” to make this concept more accessible.
+### The Code Model
+The **Code Model** represents a representation of the information present in the code, in a form that facilitates
+reasoning about it and processing. It facilitates reasoning by being close to the mental model a developer would 
+have of the code and it facilitate processing through the dualistic homogeneous and heterogeneous APIs. TODO LINKS.
+
+The Code Model is an evolution of the Abstract Syntax Tree (AST).
 
 ### Surrounding Components
 Around this central model, there are several essential components:
@@ -34,7 +37,6 @@ Starlasu combines the concept of a star and the shortand for language support. W
 have at the center one element (the code model), and everything else operates on it either producing code models, 
 refining code models or consuming code model.
 
-## Key Concepts
 
 ## Origin of the Starlasu Method
 The Starlasu method originated from Strumenta’s commitment to simplifying and standardizing language engineering. Drawing on experience with diverse projects, we distilled common patterns into reusable principles and libraries.
