@@ -9,6 +9,13 @@ Engineering projects.
 It reflects lessons learned about what works and what doesn’t, 
 combining this expertise to deliver reliable and adaptable language processing systems.
 
+## What can you do with it?
+The method has been validated through extensive real-world applications, including:
+1. **Designing Domain-Specific Languages (DSLs)**: Tailored languages for specific domains with accompanying editors and execution engines.
+2. **Building Transpilers**: Applications that translate code from one language to another.
+3. **Creating Parsers**: Tools that generate ASTs for code analysis, documentation generation, or as the initial step of transpilers.
+
+
 ## Overview
 
 The Starlasu method is centered around the idea of **Code Model**. 
@@ -36,6 +43,13 @@ They provide Language Intelligence by using the underlying Code Model
 
 These components work in a star-like configuration around the AST, emphasizing modularity
 
+## What one gets?
+Starlasu is supported by a family of libraries, each optimized for different platforms:
+- **Kolasu**: For the JVM (Java, Kotlin), expanding to Node.js and browser environments in version 1.6.
+- **Tylasu**: For Node.js and browser environments.
+- **Pylasu**: For Python.
+- **Sharplasu**: For .NET.
+
 ## Why the name Starlasu?
 
 Starlasu combines the concept of a star and the shortand for language support. Why a star? To indicate the fact that we 
@@ -44,20 +58,18 @@ refining code models or consuming code model.
 
 
 ## Origin of the Starlasu Method
-The Starlasu method originated from Strumenta’s commitment to simplifying and standardizing language engineering. Drawing on experience with diverse projects, we distilled common patterns into reusable principles and libraries.
+The Starlasu method originated from Strumenta’s commitment to simplifying and standardizing language engineering.
+In other words, we were not particularly keen reinventing the wheel and doing the same mistakes over and over, so we 
+wanted to capture what we learned in one-hundred or so language engineering projects to overcome the typical pitfalls,
+get a design that was extensible, and that permitted to get where we want as fast and uneventfully as possible.
 
-## Validation of the Starlasu Method
-The method has been validated through extensive real-world applications, including:
-1. **Designing Domain-Specific Languages (DSLs)**: Tailored languages for specific domains with accompanying editors and execution engines.
-2. **Building Transpilers**: Applications that translate code from one language to another.
-3. **Creating Parsers**: Tools that generate ASTs for code analysis, documentation generation, or as the initial step of transpilers.
+To achieve that we distilled common patterns into reusable principles and libraries. These ideas have been influenced 
+by the background of each of us, and draw on experience from the Eclipse Modeling Framework community, 
+Model Driven Engineering, Projectional Editing and the work of giants in the community such as Markus Völter, Meinte Boersma,
+Jos Warmer, Sascha Lißon and others.
 
-## Libraries Supporting the Starlasu Method
-Starlasu is supported by a family of libraries, each optimized for different platforms:
-- **Kolasu**: For the JVM (Java, Kotlin), expanding to Node.js and browser environments in version 1.6.
-- **Tylasu**: For Node.js and browser environments.
-- **Pylasu**: For Python.
-- **Sharplasu**: For .NET.
+
+
 
 These libraries share a common architecture, enabling cross-platform development and consistent tooling.
 
