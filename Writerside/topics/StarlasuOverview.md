@@ -123,3 +123,6 @@ Below is a detailed matrix of the features provided by the Starlasu libraries:
 For more information, visit [Strumenta’s Website](https://strumenta.com).
 
 MENTION CHISEL AND SPECIFIC METHODS FOR PARSERS, DSLS, TRANSPILERS
+
+WHT CAN ONE DO WITH THE CODE MODEL?
+* Generating diagrams
