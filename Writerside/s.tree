@@ -3,10 +3,34 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="s"
-                 name="StarLasu"
+                 name="The Starlasu Approach"
                  start-page="StarlasuOverview.md">
 
     <toc-element topic="StarlasuOverview.md"/>
     <toc-element topic="DualCodeModelAPIs.md"/>
     <toc-element topic="ChiselMethod.md"/>
+    <toc-element topic="Validation.md"/>
+    <toc-element topic="ASTRepresentation.md"/>
+    <toc-element topic="ASTTraversalAndQuerying.md"/>
+    <toc-element topic="CodeGeneration.md"/>
+    <toc-element topic="DocumentationGeneration.md"/>
+    <toc-element topic="EditorSupport.md"/>
+    <toc-element topic="Interoperability.md">
+        <toc-element topic="EMFInteroperability.md"/>
+    </toc-element>
+    <toc-element topic="SemanticEnrichment.md"/>
+    <toc-element topic="Testing.md"/>
+    <toc-element topic="TransformationFramework.md"/>
+    <toc-element topic="Use-Cases.md">
+        <toc-element topic="building-transpiler.md"/>
+        <toc-element topic="building-parser.md"/>
+        <toc-element topic="building-codegenerator.md"/>
+    </toc-element>
+    <toc-element topic="CommonElements.md"/>
+    <toc-element topic="CrossPlatformParsers.md"/>
+    <toc-element topic="Naming.md"/>
+    <toc-element topic="OriginAndDestination.md"/>
+    <toc-element topic="ParseTreeToASTMapping.md"/>
+    <toc-element topic="Position.md"/>
+    <toc-element topic="Serialization.md"/>
 </instance-profile>

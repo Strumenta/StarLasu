@@ -1,15 +1,15 @@
 
-# The Starlasu Method
+# The Starlasu Approach
 
-The Starlasu method provides a flexible, systematic, and extensible framework for creating tools like parsers, 
+The Starlasu approach provides a flexible, systematic, and extensible framework for creating tools like parsers, 
 transpilers, code analyzers, interpreters, code generators, and domain-specific languages (DSLs). 
 
-The Starlasu method was developed at [Strumenta](https://strumenta.com), drawing on a decade of experience in Language 
+The Starlasu approach was developed at [Strumenta](https://strumenta.com), drawing on a decade of experience in Language 
 Engineering projects. 
 It reflects lessons learned about what works and what doesn’t, 
 combining this expertise to deliver reliable and adaptable language processing systems.
 
-## What can you do with it?
+## What can you do with The Starlasu approach?
 
 The goal is to be able to define arbitrary Language Engineering applications, and flexibility is the main goal
 of this approach.
@@ -20,17 +20,17 @@ Concretely, the most common applications we write using these methods are:
 3. **Parsers**: Tools that generate Code Models for code analysis, documentation generation, or as the initial step of 
 transpilers. We typically implements these Parsers that are then used to build code analysis tools, transpilers, or other systems. 
 
-## Overview
+## Architectural Overview
 
-The Starlasu method is centered around the idea of **Code Model**. 
+The Starlasu approach is centered around the idea of **Code Model**. 
 We have this component at the center and a constellation of other components interacting with it.
 
 ![Overview of the Starlasu Approach](../images/StarlasuOverview.png)
 
-### The Code Model
+### The Code Model (or AST)
 The **Code Model** represents a representation of the information present in the code, in a form that facilitates
 reasoning about it and processing. It facilitates reasoning by being close to the mental model a developer would 
-have of the code and it facilitate processing through the [dualistic homogeneous and heterogeneous APIs](DualCodeModelAPIs.md).
+have of the code and it facilitates processing through the [dualistic homogeneous and heterogeneous APIs](DualCodeModelAPIs.md).
 
 The Code Model is an evolution of the Abstract Syntax Tree (AST).
 
@@ -47,6 +47,14 @@ They provide Language Intelligence by using the underlying Code Model
 
 These components work in a star-like configuration around the AST, emphasizing modularity
 
+### Combining Components
+
+The components we just examined can be combined into different pipelines for different goals. 
+E.g., a parser will transform a lower-level parse tree into a higher-level AST, then perhaps resolve names 
+and references, and type-check the code. A transpiler will also perhaps transform the source code into some 
+intermediate representation, then into the target language AST, from which it will generate the resulting 
+code string.
+
 ## What one gets from Starlasu?
 
 Starlasu consists of a mental framework and guidelines to build the different component. For example, we have a detailed
@@ -55,11 +63,41 @@ method to design and implement parsers (see [The Chisel Method](ChiselMethod.md)
 One also gets a family of libraries, all built around the same principles but for different programming languages. In this
 way one can conveniently use the Starlasu when programming in a multitude of programming languages.
 
-Starlasu is supported by a family of libraries, each optimized for different platforms:
+Starlasu is supported by a family of libraries, each supporting the application of The Starlasu approach on 
+different platforms:
 - **Kolasu**: For the JVM (Java, Kotlin), expanding to Node.js and browser environments in version 1.6.
 - **Tylasu**: For Node.js and browser environments.
 - **Pylasu**: For Python.
 - **Sharplasu**: For .NET.
+
+These libraries share a common architecture and are interoperable. This enable cross-platform development and 
+consistent tooling.
+
+### Feature Matrix
+
+Let's see more in detail what each library of the Starlasu family provides.
+Below is a detailed matrix of the features provided by each of them:
+
+| Feature                                      | Kolasu   | Tylasu          | Sharplasu         | Pylasu          |
+|----------------------------------------------|----------|-----------------|-------------------|-----------------|
+| [AST Representation](ASTRepresentation.md)   | Stable   | Stable          | Stable            | Stable          |
+| [Semantic Enrichment](SemanticEnrichment.md) | Complete | Not implemented | Complete          | Not implemented |
+| Code Generation                              | Stable   | Not implemented | Under development | Not implemented |
+| Parser Integration                           | Stable   | Stable          | Stable            | Stable          |
+| Editor Support                               | Partial  | Partial         | Not implemented   | Not implemented |
+| Interoperability                             | Stable   | Stable          | Partial           | Partial         |
+| AST Traversal and Querying                   | Stable   | Stable          | Stable            | Stable          |
+| Transformation Framework                     | Stable   | Stable          | Stablee           | Stable          |
+| AST Documentation                            | Stable   | Stable          | Stable            | Stable          |
+| Testing                                      | Stable   | Stable          | Stable            | Stable          |     
+| Validation                                   | Stable   | Stable          | Stable            | Stable          |
+
+Where:
+* **Stable** means that the functionality has been used in many projects and it is not expected to change
+* **Complete** means that the functionality has been implemented. It has been validated but it could futher evolve
+* **Partial** a portion of the features of the functionality have been implemented
+* **Under development** the functionality is currently under development
+* **Not implemented** the functionality is not implemented
 
 ## Why the name Starlasu?
 
@@ -68,8 +106,8 @@ have at the center one element (the code model), and everything else operates on
 refining code models or consuming code model.
 
 
-## Origin of the Starlasu Method
-The Starlasu method originated from Strumenta’s commitment to simplifying and standardizing language engineering.
+## Origin of The Starlasu approach
+The Starlasu approach originated from Strumenta’s commitment to simplifying and standardizing language engineering.
 In other words, we were not particularly keen reinventing the wheel and doing the same mistakes over and over, so we 
 wanted to capture what we learned in one-hundred or so language engineering projects to overcome the typical pitfalls,
 get a design that was extensible, and that permitted to get where we want as fast and uneventfully as possible.
@@ -78,51 +116,3 @@ To achieve that we distilled common patterns into reusable principles and librar
 by the background of each of us, and draw on experience from the Eclipse Modeling Framework community, 
 Model Driven Engineering, Projectional Editing and the work of giants in the community such as Markus Völter, Meinte Boersma,
 Jos Warmer, Sascha Lißon and others.
-
-
-
-
-These libraries share a common architecture, enabling cross-platform development and consistent tooling.
-
-## Educational Material
-Strumenta provides extensive educational resources to help developers adopt and apply the Starlasu method. These include tutorials, case studies, and hands-on workshops.
-
-## Applications
-With the Starlasu method, you can build:
-1. **Domain-Specific Languages (DSLs)**
-2. **Transpilers**
-3. **Parsers**
-
-## Technical Considerations
-Starlasu emphasizes modularity, scalability, and reusability. Its libraries are designed for interoperability, ensuring seamless integration across platforms.
-
-## Feature Matrix
-Below is a detailed matrix of the features provided by the Starlasu libraries:
-
-| Feature                    | Kolasu                   | Tylasu                   | Pylasu                   | Sharplasu                |
-|----------------------------|--------------------------|--------------------------|--------------------------|--------------------------|
-| AST Representation         | Stable and widely used   | Stable and widely used   | Stable and widely used   | Stable and widely used   |
-| Symbol Resolution          | Stable and reliable      | Stable and reliable      | Stable and reliable      | Stable and reliable      |
-| Type Calculation           | In advanced development  | In advanced development  | In advanced development  | In advanced development  |
-| Code Generation            | Mature with enhancements | Mature with enhancements | Mature with enhancements | Mature with enhancements |
-| Parser Integration         | Mature and extensible    | Mature and extensible    | Mature and extensible    | Mature and extensible    |
-| Editor Support             | Stable and in use        | Stable and in use        | Stable and in use        | Stable and in use        |
-| Interoperability           | Partially mature         | Partially mature         | Partially mature         | Partially mature         |
-| AST Traversal and Querying | Stable and reliable      | Stable and reliable      | Stable and reliable      | Stable and reliable      |
-| Static Analysis            | In development           | In development           | In development           | In development           |
-| Transformation Framework   | Stable and extensible    | Stable and extensible    | Stable and extensible    | Stable and extensible    |
-| Integration with IDEs      | Experimental             | Experimental             | Experimental             | Experimental             |
-| Interpreters               | Mature and performant    | Mature and performant    | Mature and performant    | Mature and performant    |
-| Documentation Generation   | Mature and extensible    | Mature and extensible    | Mature and extensible    | Mature and extensible    |
-| Code Refactoring Support   | In development           | In development           | In development           | In development           |
-| Cross-Language Transpilers | Mature with enhancements | Mature with enhancements | Mature with enhancements | Mature with enhancements |
-| Multi-Language Support     | Stable and improving     | Stable and improving     | Stable and improving     | Stable and improving     |
-
----
-
-For more information, visit [Strumenta’s Website](https://strumenta.com).
-
-MENTION CHISEL AND SPECIFIC METHODS FOR PARSERS, DSLS, TRANSPILERS
-
-WHT CAN ONE DO WITH THE CODE MODEL?
-* Generating diagrams
