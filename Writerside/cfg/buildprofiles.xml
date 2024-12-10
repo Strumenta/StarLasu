@@ -6,7 +6,7 @@
     <variables></variables>
     <build-profile instance="strumenta">
         <variables>
-            <noindex-content>true</noindex-content>
+            <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
 
