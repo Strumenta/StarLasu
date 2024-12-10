@@ -2,7 +2,7 @@
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
-<instance-profile id="s"
+<instance-profile id="strumenta"
                  name="The Starlasu Approach"
                  start-page="StarlasuOverview.md">
 
