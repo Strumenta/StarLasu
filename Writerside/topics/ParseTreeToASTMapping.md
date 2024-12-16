@@ -29,7 +29,14 @@ val cu = CU(
         DisplayIntStatement(value = 456).withParseTreeNode(pt.statement(1))
     )
 ).withParseTreeNode(pt)
-```        
+```
+
+Transformers allow us to describe how the original parse-tree maps into our final AST. When a node of a given type is 
+encountered in the parse-tree, the corresponding transformer (which we previously defined through the 
+`registerNodeFactory` method) is called, returning the result that will replace said node in the final output. 
+Each transformer may itself call transformation methods, to properly translate and assign child nodes from the 
+parse-tree input node. By doing this, we can walk and transform the entire parse-tree in a way that is simple and 
+idiomatic, leaving us with a polished AST.
 
 Read more about this topic for:
 - [Kolasu](https://javadoc.io/doc/com.strumenta.kolasu/kolasu-core/latest/com/strumenta/kolasu/mapping/ParseTreeToASTTransformer.html) ([source code](https://github.com/Strumenta/kolasu/tree/master/core/src/main/kotlin/com/strumenta/kolasu/mapping))
