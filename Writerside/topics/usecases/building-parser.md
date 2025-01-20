@@ -12,10 +12,10 @@ An initial version may also be generated from the ANTLR grammar, by using StarLa
 
 We then organize the parser into a pipeline:
 1. First-stage parsing using ANTLR. We obtain a parse tree and, possibly, a series of errors.
-2. Second-stage parsing. [The parse tree is mapped into the AST](../parsetree_to_ast.md)
+2. Second-stage parsing. [The parse tree is mapped into the AST](ParseTreeToASTMapping.md)
 3. Potentially, for some parsers, we perform additional steps, such as:
-   1. [Symbol resolution](../symbol_resolution.md)
-   2. [Type checking](../typesystem.md)
+   1. [Symbol resolution](SymbolResolution.md)
+   2. [Type checking](TypeChecking.md)
    3. Advanced calculations such as lineage, data flow analysis, linting, etc.
 
 The StarLasu ASTs provide a more convenient API with respect to the ANTLR APIs for parse trees. In fact, StarLasu comes 
