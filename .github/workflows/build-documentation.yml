@@ -82,5 +82,9 @@ jobs:
           # Install Netlify CLI
           npm install -g netlify-cli
 
-          # Deploy built documentation
-          netlify deploy --prod --dir artifacts
+          # Unzip the generated artifact
+          mkdir -p extracted
+          unzip artifacts/${{ env.ARTIFACT }} -d extracted
+
+          # Deploy extracted content to Netlify
+          netlify deploy --prod --dir extracted
