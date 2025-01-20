@@ -63,16 +63,18 @@ jobs:
           name: writerside-docs
           path: artifacts/
 
-#      - name: Push built documentation as a package
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        run: |
-#            # Create a release version tag
-#            RELEASE_TAG="v$(date +'%Y%m%d%H%M%S')"
-#            echo "Release tag: $RELEASE_TAG"
-#
-#            # Package the built artifact and upload it to GitHub Packages
-#            mkdir -p ./package
+      - name: Package Built Artifact
+        run: |
+          mkdir -p ./package
+          cp artifacts/webHelpSTRUMENTA2-all.zip ./package/
+          cd ./package
+          echo '{ "name": "writerside-docs", "version": "1.0.0" }' > package.json
+
+      - name: Publish to GitHub Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm publish --registry=https://npm.pkg.github.com
 
       - name: Deploy to Netlify
         env:
