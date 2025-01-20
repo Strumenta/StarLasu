@@ -1,8 +1,8 @@
 # Code Generation
 
-Code Generation modules are usefull to generate new files programmatically. This is the case when building a transpiler, where there is the need to generate text (code) from an AST representation.
+Code Generation modules are useful to generate new files programmatically. This is the case when building a transpiler, where there is the need to generate text (code) from an AST representation.
 
-Currently Code Generation modules can be written only with Kolasu.
+Currently, Code Generation modules can be written with Kolasu and SharpLasu.
 
 ## Setup 
 
@@ -33,7 +33,6 @@ dependencies {
 
     implementation("com.github.ajalt.clikt:clikt:3.5.0")
 }
-
 ```
 
 ## Generation rules
@@ -48,7 +47,7 @@ class MyCodeGenerator : ASTCodeGenerator() {
             indent()
             println(it.field2)
             dedent()
-            printList(prefix = "",postfix = "",elements = it.children,separator = "\n")
+            printList(prefix = "", postfix = "", elements = it.children, separator = "\n")
             printFlag(it.flag,"Flag is true")
         }
     }
@@ -67,18 +66,21 @@ The methods to generate code are quite simple and intuitive to use:
 
 There is the need to know how the generated code should look like. 
 
-Unit testing can be done by writing the expected output in a file/string and comparing the generated output with the expected output using as input a manually created AST.
+For that unit testing can be done by writing the expected output in a file/string and comparing the generated output with the expected output using as input a manually created AST.
 
 It is also a good practise to have end-to-end tests, and one can follow 2 methods:
 
 1. AST to AST testing:
-   - Parse an input file that contains the original code to the target AST representation;
-   - Parse an input file that contains the expected code to the expected AST representation;
-   - Compare the expected AST with the generated AST.
+
+   - Parse an input file that contains the original code, obtaining a first AST;
+   - Generate the code from this first AST, obtaining the generated code;
+   - Reparse the generated code, obtaining a second AST;
+   - Compare the first and the second AST.
 
 This testing method is useful to test large examples, where it is hard to write the expected output manually. It allows to test the code generation in a more abstract way, where we check that the produced AST matches the one we expect. Of course it lacks coverage for code styling and formatting.
 
 2. AST to code testing:
+
    - Parse a string that contains the original code to the target AST representation;
    - Generate the code from the target AST;
    - Compare the expected output with the generated output.

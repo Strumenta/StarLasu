@@ -1,6 +1,6 @@
 # The Chisel Method
 
-The Chisel method for writing parsers allows to build parsers consistently using the same approach which allows to achieve a consistency on the architectural decisions and enables developers to get familiar with a project easily.
+The Chisel method allows to build parsers consistently using the same approach which allows to achieve a consistency on the architectural decisions and enables developers to get familiar with a project easily.
 
 This method is called Chisel because building parsers is about getting the information out of the code, as when you use a chisel you "take" the statue out of the marble. Also, since Strumenta means tools in Latin, Chisel takes the place as one of the most important tool in the company's toolset.
 
@@ -12,7 +12,8 @@ The Chisel method is based on the following principles:
 
 The Chisel method is based on the following steps:
 
-1. Create a parser using the StarLasu Libraries, for that you need to:
+1. Create a parser using the StarLasu Libraries and Starlasu Tools, for that you need to:
+
   - Define a grammar;
   - Use the starlasu libraries to generate the AST;
   - Refine the AST;
