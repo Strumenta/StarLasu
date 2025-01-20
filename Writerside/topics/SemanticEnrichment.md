@@ -1,12 +1,21 @@
 # Semantic Enrichment
 
-_To be written_
+People who are new to parser development may attempt to enforce grammar-level type coherence. For example, defining that a variable declared with type int can only have a subset of the expression types as its initial value, that doesn't work and can increase the complexity of writing a grammar and still not obtaining the desired constraints.
 
-Symbol Resolution is the process of giving a meaning to the each name in the source 
-code. For example:
+In general, it is preferable to be less strict in the grammar and Parse Tree to AST Mapping, identifying discrepancies as the final AST processing step.
 
-* to connect a given use of a variable to its declaration; 
-* * to reconstruct the definition of a SQL column from an alias in a subquery; 
-* * to identify a user-defined therapy plan in a medical support DSL.
+The benefits of doing so are:
 
-Symbol resolution relies on the naming facilities in StarLasu.
+- Simpler grammars;
+- Better error messages;
+
+Semantic checks are the mechanisms that are meant to check/identify possible discrepancies in a syntactically correct input. It is an advanced feature and it is not implemented in most parsers, only when specifically requested/needed.
+
+## Semantic Checks
+
+- [](SymbolResolution.md);
+- Type System checks;
+- Other checks such as:
+  - Two symbols with the same name declared in the same scope;
+  - Variables used before being declared;
+  - etc...

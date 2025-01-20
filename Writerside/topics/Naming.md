@@ -7,4 +7,4 @@ Two interfaces are defined:
 
 For example, a FunctionDeclaration will be PossiblyNamed in languages which permits anonymous functions.
 
-In the StarLasu libraries we provide special support for things which are Named or PossiblyNamed. We can used these interfaces in [Symbol Resolution](https://github.com/Strumenta/StarLasu/blob/main/documentation/symbol_resolution.md), for example.
+In the StarLasu libraries we provide special support for things which are Named or PossiblyNamed. We can used these interfaces in [Symbol Resolution](SymbolResolution.md), for example.
