@@ -57,18 +57,18 @@ jobs:
             artifacts/${{ steps.define-ids.outputs.algolia_artifact }}
           retention-days: 7
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: writerside-docs
-          path: artifacts/
-
-      - name: Package Built Artifact
-        run: |
-          mkdir -p ./package
-          cp artifacts/webHelpSTRUMENTA2-all.zip ./package/
-          cd ./package
-          echo '{ "name": "writerside-docs", "version": "1.0.0" }' > package.json
+#      - name: Upload build artifact
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: writerside-docs
+#          path: artifacts/
+#
+#      - name: Package Built Artifact
+#        run: |
+#          mkdir -p ./package
+#          cp artifacts/webHelpSTRUMENTA2-all.zip ./package/
+#          cd ./package
+#          echo '{ "name": "writerside-docs", "version": "1.0.0" }' > package.json
 
       - name: Deploy to Netlify
         env:
@@ -84,3 +84,33 @@ jobs:
 
           # Deploy extracted content to Netlify
           netlify deploy --prod --dir extracted
+
+      - name: Create Release
+        id: create-release
+        uses: actions/create-release@v1
+        with:
+          tag_name: v${{ github.run_number }}
+          release_name: Documentation Build - ${{ github.run_number }}
+          body: |
+            ## Documentation Build
+            This release contains the built documentation artifacts for version ${{ github.run_number }}.
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Artifact to Release
+        uses: actions/upload-release-asset@v1
+        with:
+            upload_url: ${{ steps.create-release.outputs.upload_url }}
+            asset_path: artifacts/${{ env.ARTIFACT }}
+            asset_name: ${{ env.ARTIFACT }}
+            asset_content_type: application/zip
+
+      - name: Upload Algolia Artifact to Release
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
+          asset_name: ${{ env.ALGOLIA_ARTIFACT }}
+          asset_content_type: application/zip
