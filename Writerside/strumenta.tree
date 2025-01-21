@@ -29,6 +29,7 @@
         <toc-element topic="ASTRepresentation.md"/>
         <toc-element topic="Validation.md"/>
         <toc-element topic="SymbolResolution.md"/>
+        <toc-element topic="TypeChecking.md"/>
     </toc-element>
     <toc-element topic="Methods.md">
         <toc-element topic="ChiselMethod.md"/>
