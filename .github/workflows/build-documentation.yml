@@ -70,12 +70,6 @@ jobs:
           cd ./package
           echo '{ "name": "writerside-docs", "version": "1.0.0" }' > package.json
 
-      - name: Publish to GitHub Packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm publish --registry=https://npm.pkg.github.com
-
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
